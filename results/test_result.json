@@ -1,0 +1,145 @@
+{
+  "status": "complete",
+  "completed_at_utc": "2026-11-09T11:56:08.643430+00:00",
+  "selected_before_test": "stack_identity",
+  "frozen_manifest_file": "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/frozen_manifest.json",
+  "frozen_manifest_sha256": "bddea1c1f9bde87cda00b728770fe451d645ceb3264f4ada8d82d80ee5e76d39",
+  "test_scope": {
+    "shots": 6868,
+    "matches": 273,
+    "goals": 713,
+    "first_match_date": "2016-04-11",
+    "last_match_date": "2016-05-17"
+  },
+  "benchmark_coverage": {
+    "valid": 6868,
+    "missing": 0,
+    "invalid": 0
+  },
+  "metrics": [
+    {
+      "model": "stack_identity",
+      "cohort": "all_test",
+      "shots": 6868,
+      "matches": 273,
+      "selected_before_test": true,
+      "log_loss": 0.2601982185363379,
+      "brier_score": 0.07489658148682021,
+      "roc_auc": 0.8217966669818833,
+      "average_precision": 0.43015951879626396
+    },
+    {
+      "model": "benchmark_statsbomb_xg",
+      "cohort": "all_test",
+      "shots": 6868,
+      "matches": 273,
+      "selected_before_test": false,
+      "log_loss": 0.2612009995285595,
+      "brier_score": 0.07453229913889033,
+      "roc_auc": 0.8192608433604534,
+      "average_precision": 0.43883418132427715
+    },
+    {
+      "model": "xgboost",
+      "cohort": "all_test",
+      "shots": 6868,
+      "matches": 273,
+      "selected_before_test": false,
+      "log_loss": 0.2624209390282869,
+      "brier_score": 0.07532604743609617,
+      "roc_auc": 0.8171502205187859,
+      "average_precision": 0.4246123620187293
+    },
+    {
+      "model": "gam",
+      "cohort": "all_test",
+      "shots": 6868,
+      "matches": 273,
+      "selected_before_test": false,
+      "log_loss": 0.2624408028246419,
+      "brier_score": 0.07555379399665328,
+      "roc_auc": 0.8178431656266414,
+      "average_precision": 0.42075423798907013
+    },
+    {
+      "model": "logistic_regression",
+      "cohort": "all_test",
+      "shots": 6868,
+      "matches": 273,
+      "selected_before_test": false,
+      "log_loss": 0.26293359536754074,
+      "brier_score": 0.07568195617485357,
+      "roc_auc": 0.8167314000293949,
+      "average_precision": 0.41818036203342984
+    },
+    {
+      "model": "extra_trees",
+      "cohort": "all_test",
+      "shots": 6868,
+      "matches": 273,
+      "selected_before_test": false,
+      "log_loss": 0.26428912658510767,
+      "brier_score": 0.07637744658088011,
+      "roc_auc": 0.8159610939007842,
+      "average_precision": 0.4040829153175471
+    }
+  ],
+  "paired_comparison_method": "Paired match bootstrap; percentile 95% intervals; pooled per-shot losses.",
+  "paired_comparison": [
+    {
+      "metric": "log_loss",
+      "stack_minus_statsbomb": -0.0010027809922215647,
+      "ci_lower": -0.005062324468779729,
+      "ci_upper": 0.0025075028333065605,
+      "confidence_level": 0.95,
+      "bootstrap_repetitions": 5000,
+      "resampling_unit": "match",
+      "seed": 42
+    },
+    {
+      "metric": "brier_score",
+      "stack_minus_statsbomb": 0.00036428234792987773,
+      "ci_lower": -0.0006027039425254671,
+      "ci_upper": 0.0013058423054139725,
+      "confidence_level": 0.95,
+      "bootstrap_repetitions": 5000,
+      "resampling_unit": "match",
+      "seed": 42
+    }
+  ],
+  "calibration_totals": [
+    {
+      "model": "benchmark_statsbomb_xg",
+      "shots": 6868,
+      "goals": 713,
+      "expected_goals": 663.2611590944
+    },
+    {
+      "model": "stack_identity",
+      "shots": 6868,
+      "goals": 713,
+      "expected_goals": 692.4467504611266
+    }
+  ],
+  "conclusion": "The frozen stack has the lowest test log loss and highest ROC AUC. StatsBomb xG has the lowest Brier score and highest average precision. Both paired confidence intervals include zero; these results do not establish a clear advantage between the stack and StatsBomb xG.",
+  "artifacts": {
+    "frozen_manifest.json": "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/frozen_manifest.json",
+    "test_model_predictions.parquet": "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_model_predictions.parquet",
+    "test_evaluation_predictions.parquet": "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_evaluation_predictions.parquet",
+    "test_metrics.parquet": "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_metrics.parquet",
+    "test_paired_comparison.parquet": "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_paired_comparison.parquet",
+    "test_model_comparison.png": "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_model_comparison.png",
+    "test_calibration_bins.parquet": "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_calibration_bins.parquet",
+    "test_calibration.png": "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_calibration.png"
+  },
+  "artifact_sha256": {
+    "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/frozen_manifest.json": "bddea1c1f9bde87cda00b728770fe451d645ceb3264f4ada8d82d80ee5e76d39",
+    "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_model_predictions.parquet": "fa60b4eb8eb82b80f99c7e46665f86c0411ed614fb5208d3d24d7ac1dd8ca1c4",
+    "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_evaluation_predictions.parquet": "3ba098742c4492ee470579428835242a564ea3b113e6ba7b34b58473b45e4a8f",
+    "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_metrics.parquet": "0ce18fb46b3fafd3665f5944280966df6153418c52e8cb09e38e74b62bf50700",
+    "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_paired_comparison.parquet": "28ea05d3184ccf3d87ae36f710a22a2b035ef46d714c79e7d3672e09bbc133d5",
+    "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_model_comparison.png": "f60b83040925e9afabd98c0133682ac3ba458041c1f9d07cadefad87566656ef",
+    "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_calibration_bins.parquet": "39ea59aab4cf64be2b06b80cc177fd0a7e5d817d2f20642dfdadf6d7b372e1f5",
+    "models/3bfbffe1de5750ebd47d770be0bb924a10cde54f/final_evaluation/test_calibration.png": "7a97b27de68b8e14bf0ba5a07e969f802377195e24f427356cc336f59e097b8c"
+  }
+}
