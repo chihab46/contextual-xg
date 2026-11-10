@@ -41,6 +41,7 @@ The repository layout prepared for this update is:
 ```text
 contextual-xg/
   LICENSE
+  README.md
   PROJECT_CONTEXT.md
   data_source.json
   modelling_config.json
@@ -64,7 +65,7 @@ contextual-xg/
 
 Commit `98a99318144c4d35b5b846e7e62661078c4f84ab` added the seven result files and two configuration files to `main`. All nine uploaded Git blob hashes were checked against the local originals. The existing notebook and licence were preserved.
 
-`README.md`, `requirements.txt`, and a root `.gitignore` were not present in the inspected clone. Check again before creating them. Notebook organisation and shared helper consolidation are complete. Repository documentation, dependency files, and extraction into reusable Python modules remain possible future tasks.
+`README.md` documents the notebook entry points, artifact requirements, execution modes, methodology, results, and licensing. `requirements.txt` and a root `.gitignore` are not present. Notebook organisation and shared helper consolidation are complete. Dependency files and extraction into reusable Python modules remain possible future tasks.
 
 ### Notebook execution history
 
@@ -408,7 +409,7 @@ For code organisation or refactoring, retain ordered features, fitted preprocess
 
 For modelling experiments, use distinct experiment IDs and artifacts. Fit learned preprocessing and model choices using the permitted training/validation protocol. Keep the original frozen manifest and exported test result intact. Describe post-test model development honestly and plan fresh independent evaluation when making a new confirmatory claim.
 
-Markdown documentation, resume/reproduction modes, and separate analysis notebooks are implemented. A README, dependency files, a project-specific gitignore, reusable Python modules, and dedicated training/inference/evaluation entry points remain possible improvements. Implement these when they serve a requested change, rather than restarting the entire project automatically.
+The README, resume/reproduction modes, and separate analysis notebooks are implemented. Dependency files, a project-specific gitignore, reusable Python modules, and dedicated training/inference/evaluation entry points remain possible improvements. Implement these when they serve a requested change, rather than restarting the entire project automatically.
 
 The repository has an MIT licence for original code. StatsBomb data and third-party dependencies retain their own terms. Preserve StatsBomb attribution and consult its data terms when publishing or redistributing data-derived material.
 
